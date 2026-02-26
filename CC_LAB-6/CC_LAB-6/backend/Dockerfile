@@ -1,13 +1,16 @@
-FROM ubuntu:22.04
+# FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y g++
+# RUN apt-get update && apt-get install -y g++
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY app.cpp .
+# COPY app.cpp .
 
-RUN g++ app.cpp -o app
+# RUN g++ app.cpp -o app
 
-EXPOSE 8080
+# EXPOSE 8080
 
-CMD ["./app"]
+# CMD ["./app"]
+
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
